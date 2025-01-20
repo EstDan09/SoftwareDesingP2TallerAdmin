@@ -1,0 +1,10 @@
+<div>
+    <p>Lista de Usuarios</p>
+</div>
+
+<div (click)="irACrearUsuario()">Crear Usuario</div>
+
+<div *ngFor="let u of usuarios">
+    <app-usuario-card [id]="u._id"></app-usuario-card>
+</div>
+

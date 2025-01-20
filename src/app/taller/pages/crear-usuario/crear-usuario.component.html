@@ -1,0 +1,51 @@
+<div class="crear-usuario-container">
+  <h2>Crear Usuario</h2>
+  <form (ngSubmit)="crearUsuario()" #usuarioForm="ngForm">
+    <!-- Campo de Nombre Completo -->
+    <div class="form-group">
+      <label for="nombreCompleto">Nombre Completo</label>
+      <input
+        type="text"
+        id="nombreCompleto"
+        name="nombreCompleto"
+        class="form-control"
+        placeholder="Escribe tu nombre completo"
+        required
+        [(ngModel)]="usuarioACrear.nombre"
+      />
+    </div>
+
+    <!-- Campo de Correo Electrónico -->
+    <div class="form-group">
+      <label for="correo">Correo Electrónico</label>
+      <input
+        type="email"
+        id="correo"
+        name="correo"
+        class="form-control"
+        placeholder="Escribe tu correo"
+        required
+        [(ngModel)]="usuarioACrear.correo"
+      />
+    </div>
+
+    <!-- Campo de Contraseña -->
+    <div class="form-group">
+      <label for="contrasena">Contraseña</label>
+      <input
+        type="password"
+        id="contrasena"
+        name="contrasena"
+        class="form-control"
+        placeholder="Escribe tu contraseña"
+        required
+        [(ngModel)]="usuarioACrear.password"
+      />
+    </div>
+
+    <!-- Botón para Crear Usuario -->
+    <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.form.valid">
+      Crear Usuario
+    </button>
+  </form>
+</div>
