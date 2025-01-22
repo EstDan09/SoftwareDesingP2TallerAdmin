@@ -7,7 +7,8 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { TallerRoutingModule } from './taller-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule
+import { FormsModule } from '@angular/forms';
+import { CrearCarroComponent } from './pages/crear-carro/crear-carro.component'; // Importar FormsModule
 
 
 
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms'; // Importar FormsModule
     CarrosComponent,
     ReparacionesComponent,
     InicioComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    CrearCarroComponent
   ],
   imports: [
     CommonModule,
