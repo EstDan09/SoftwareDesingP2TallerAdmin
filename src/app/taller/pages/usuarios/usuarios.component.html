@@ -1,10 +1,11 @@
-<div>
-    <p>Lista de Usuarios</p>
-</div>
-
-<div (click)="irACrearUsuario()">Crear Usuario</div>
-
-<div *ngFor="let u of usuarios">
-    <app-usuario-card [id]="u._id"></app-usuario-card>
-</div>
-
+<div class="usuarios-container">
+    <header class="usuarios-header">
+      <h1>Lista de Usuarios</h1>
+      <button class="btn btn-primary" (click)="irACrearUsuario()">Crear Usuario</button>
+    </header>
+  
+    <div class="usuarios-grid">
+      <app-usuario-card *ngFor="let u of usuarios" [id]="u._id"></app-usuario-card>
+    </div>
+  </div>
+  

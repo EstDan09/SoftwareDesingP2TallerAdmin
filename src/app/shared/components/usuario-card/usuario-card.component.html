@@ -1,1 +1,23 @@
-<p>{{usuario?.nombre}}</p>
+<div class="card" *ngIf="usuario">
+    <!-- Foto de perfil -->
+    <div class="card-image">
+      <img
+        *ngIf="usuario.fotoPerfil; else placeholder"
+        [src]="usuario.fotoPerfil"
+        alt="Foto de {{ usuario.nombre }}"
+      />
+      <ng-template #placeholder>
+        <img src="assets/placeholder.png" alt="Sin foto de perfil" />
+      </ng-template>
+    </div>
+  
+    <!-- Información del usuario -->
+    <div class="card-content">
+      <h3>{{ usuario.nombre }}</h3>
+      <p><strong>Correo:</strong> {{ usuario.correo }}</p>
+      <p *ngIf="usuario.carros?.length">
+        <strong>Carros:</strong> {{ usuario.carros.length }}
+      </p>
+    </div>
+  </div>
+  

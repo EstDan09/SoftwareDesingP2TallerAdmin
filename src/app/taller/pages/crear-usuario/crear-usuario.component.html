@@ -43,6 +43,19 @@
       />
     </div>
 
+    <!-- Campo para subir Foto de Perfil -->
+    <div class="form-group">
+      <label for="fotoPerfil">Foto de Perfil</label>
+      <input
+        type="file"
+        id="fotoPerfil"
+        name="fotoPerfil"
+        class="form-control"
+        (change)="onFileSelected($event)"
+        accept="image/*"
+      />
+    </div>
+
     <!-- Botón para Crear Usuario -->
     <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.form.valid">
       Crear Usuario

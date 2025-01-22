@@ -1,8 +1,10 @@
 export interface IUsuario {
-    _id:      String;
-    nombre:   String;
-    correo:   String;
-    password: String;
-    carros:   any[];
-    __v:      number;
-}
+    _id: string;
+    nombre: string;
+    correo: string;
+    password: string;
+    carros: any[];
+    fotoPerfil?: string; 
+    __v: number;
+  }
+  
