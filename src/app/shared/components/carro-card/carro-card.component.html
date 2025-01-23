@@ -1,0 +1,21 @@
+<div class="carro-card">
+    <!-- Car Image -->
+    <div class="carro-image">
+      <img *ngIf="carroToShow.fotoCarro; else noImage" [src]="carroToShow.fotoCarro" alt="Foto de {{ carroToShow.modelo }}" />
+      <ng-template #noImage>
+        <div class="no-image-placeholder">
+          <p>Sin foto disponible</p>
+        </div>
+      </ng-template>
+    </div>
+  
+    <!-- Car Information -->
+    <div class="carro-info">
+      <h3>{{ carroToShow.marca }} {{ carroToShow.modelo }}</h3>
+      <p><strong>Año:</strong> {{ carroToShow.year }}</p>
+      <p><strong>Placa:</strong> {{ carroToShow.placa }}</p>
+      <p><strong>Color:</strong> {{ carroToShow.color }}</p>
+      <p><strong>Estado:</strong> {{ carroToShow.estado }}</p>
+    </div>
+  </div>
+  

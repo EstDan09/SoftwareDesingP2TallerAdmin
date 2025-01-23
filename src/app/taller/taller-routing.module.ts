@@ -5,6 +5,7 @@ import { CarrosComponent } from './pages/carros/carros.component';
 import { ReparacionesComponent } from './pages/reparaciones/reparaciones.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
+import { CrearCarroComponent } from './pages/crear-carro/crear-carro.component';
 
 const routes: Routes = [
     {
@@ -26,6 +27,10 @@ const routes: Routes = [
     {
         path: 'crear-usuario',
         component: CrearUsuarioComponent
+    },
+    {
+        path: 'crear-carro',
+        component: CrearCarroComponent
     }
 ]
 

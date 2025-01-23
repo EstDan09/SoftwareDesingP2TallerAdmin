@@ -1,1 +1,123 @@
-<p>crear-carro works!</p>
+<div class="crear-carro-container">
+    <h2>Crear Carro</h2>
+    <form (ngSubmit)="crearCarro()" #carroForm="ngForm">
+      <!-- Dropdown for Car Owner -->
+      <div class="form-group">
+        <label for="usuario">Propietario del Carro</label>
+        <select
+          id="usuario"
+          name="usuario"
+          class="form-control"
+          [(ngModel)]="carroToSend.correo"
+          required
+        >
+          <option value="" disabled selected>Selecciona un usuario</option>
+          <option *ngFor="let user of userOptions" [value]="user.correo">
+            {{ user.nombre }} ({{ user.correo }})
+          </option>
+        </select>
+      </div>
+  
+      <!-- Car Fields -->
+      <div class="form-group">
+        <label for="placa">Placa</label>
+        <input
+          type="text"
+          id="placa"
+          name="placa"
+          class="form-control"
+          placeholder="Escribe la placa"
+          required
+          [(ngModel)]="carroToSend.placa"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="color">Color</label>
+        <input
+          type="text"
+          id="color"
+          name="color"
+          class="form-control"
+          placeholder="Escribe el color"
+          required
+          [(ngModel)]="carroToSend.color"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="modelo">Modelo</label>
+        <input
+          type="text"
+          id="modelo"
+          name="modelo"
+          class="form-control"
+          placeholder="Escribe el modelo"
+          required
+          [(ngModel)]="carroToSend.modelo"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="marca">Marca</label>
+        <input
+          type="text"
+          id="marca"
+          name="marca"
+          class="form-control"
+          placeholder="Escribe la marca"
+          required
+          [(ngModel)]="carroToSend.marca"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="year">Año</label>
+        <input
+          type="text"
+          id="year"
+          name="year"
+          class="form-control"
+          placeholder="Escribe el año"
+          required
+          [(ngModel)]="carroToSend.year"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="estado">Estado</label>
+        <input
+          type="text"
+          id="estado"
+          name="estado"
+          class="form-control"
+          placeholder="Escribe el estado"
+          required
+          [(ngModel)]="carroToSend.estado"
+        />
+      </div>
+  
+      <!-- File Upload for Car Image -->
+      <div class="form-group">
+        <label for="fotoCarro">Foto del Carro</label>
+        <input
+          type="file"
+          id="fotoCarro"
+          name="fotoCarro"
+          class="form-control"
+          (change)="onFileSelected($event)"
+          accept="image/*"
+        />
+      </div>
+  
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!carroForm.form.valid"
+      >
+        Crear Carro
+      </button>
+    </form>
+  </div>
+  

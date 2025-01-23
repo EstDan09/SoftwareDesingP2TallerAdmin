@@ -18,11 +18,16 @@ export class UsuariosComponent implements OnInit {
   ngOnInit() {
     this._usuariosService.getUsuarios().subscribe(res => {
       this.usuarios = res.data;
+      //console.log(this.usuarios);
     })
   }
 
   irACrearUsuario(): void {
     this._router.navigate(['taller/crear-usuario']);
+  }
+
+  irACarrosDeUsuario(id: string) {
+    this._router.navigate(['taller/carros', id])
   }
 
 }

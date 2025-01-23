@@ -5,7 +5,8 @@
     </header>
   
     <div class="usuarios-grid">
-      <app-usuario-card *ngFor="let u of usuarios" [id]="u._id"></app-usuario-card>
+      <app-usuario-card *ngFor="let u of usuarios" [id]="u._id" (click)="irACarrosDeUsuario(u._id)"
+      ></app-usuario-card>
     </div>
   </div>
   

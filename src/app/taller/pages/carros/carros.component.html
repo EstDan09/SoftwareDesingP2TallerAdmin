@@ -1,1 +1,10 @@
-<p>carros works!</p>
+<div class="usuarios-container">
+  <header class="usuarios-header">
+    <h1>Lista de Carros</h1>
+    <button class="btn btn-primary" (click)="irACrearCarro()">Crear Carro</button>
+  </header>
+
+<div class="carros-container">
+    <app-carro-card *ngFor="let carro of carros" [carroToShow]="carro"></app-carro-card>
+  </div>
+  
