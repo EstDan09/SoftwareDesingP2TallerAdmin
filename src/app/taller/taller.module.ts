@@ -8,7 +8,8 @@ import { TallerRoutingModule } from './taller-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
 import { FormsModule } from '@angular/forms';
-import { CrearCarroComponent } from './pages/crear-carro/crear-carro.component'; // Importar FormsModule
+import { CrearCarroComponent } from './pages/crear-carro/crear-carro.component';
+import { CrearReparacionComponent } from './pages/crear-reparacion/crear-reparacion.component'; // Importar FormsModule
 
 
 
@@ -20,7 +21,8 @@ import { CrearCarroComponent } from './pages/crear-carro/crear-carro.component';
     ReparacionesComponent,
     InicioComponent,
     CrearUsuarioComponent,
-    CrearCarroComponent
+    CrearCarroComponent,
+    CrearReparacionComponent
   ],
   imports: [
     CommonModule,

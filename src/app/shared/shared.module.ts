@@ -4,6 +4,7 @@ import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { RouterModule } from '@angular/router';
 import { UsuarioCardComponent } from './components/usuario-card/usuario-card.component';
 import { CarroCardComponent } from './components/carro-card/carro-card.component';
+import { ReparacionCardComponent } from './components/reparacion-card/reparacion-card.component';
 
 
 
@@ -11,7 +12,9 @@ import { CarroCardComponent } from './components/carro-card/carro-card.component
   declarations: [
     SidemenuComponent,
     UsuarioCardComponent,
-    CarroCardComponent
+    CarroCardComponent,
+    ReparacionCardComponent,
+    ReparacionCardComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +23,8 @@ import { CarroCardComponent } from './components/carro-card/carro-card.component
   exports: [
     SidemenuComponent,
     UsuarioCardComponent,
-    CarroCardComponent
+    CarroCardComponent,
+    ReparacionCardComponent
   ]
 })
 export class SharedModule { }

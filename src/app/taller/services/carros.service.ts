@@ -14,7 +14,7 @@ export class CarrosService {
 
     getCarros(id: String) {
         return this.http.get<{ msg: String; data: ICarro[] }>(
-            `${this.API_URL}/carro/${id}`
+            `${this.API_URL}/carro/show/${id}`
         );
     }
 
