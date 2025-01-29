@@ -5,5 +5,5 @@
   </header>
 
   <div class="carros-container">
-    <app-carro-card *ngFor="let carro of carros" [carroToShow]="carro"></app-carro-card>
+    <app-carro-card *ngFor="let carro of carros" [carroToShow]="carro" (click)="irAReparacionesDeCarro(carro._id)"></app-carro-card>
   </div>

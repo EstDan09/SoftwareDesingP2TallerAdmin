@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-carros',
   standalone: false,
-  
+
   templateUrl: './carros.component.html',
   styleUrl: './carros.component.scss'
 })
@@ -16,22 +16,26 @@ export class CarrosComponent implements OnInit {
   carros: ICarro[] = [];
   id: string = '';
 
-  constructor( private _carroService: CarrosService, private _activRoute: ActivatedRoute, private _router: Router){}
+  constructor(private _carroService: CarrosService, private _activRoute: ActivatedRoute, private _router: Router) { }
 
   ngOnInit(): void {
-    this._activRoute.params.subscribe( params => {
+    this._activRoute.params.subscribe(params => {
       this.id = params['id'];
       this.getCarros(this.id);
     })
   }
 
   getCarros(id: string) {
-    this._carroService.getCarros(id).subscribe( res => {
+    this._carroService.getCarros(id).subscribe(res => {
       this.carros = res.data;
       console.log(this.carros);
     });
   }
-  irACrearCarro(){
+  irACrearCarro() {
     this._router.navigate(['taller/crear-carro']);
+  }
+
+  irAReparacionesDeCarro(id: string) {
+    this._router.navigate(['taller/reparaciones', id])
   }
 }

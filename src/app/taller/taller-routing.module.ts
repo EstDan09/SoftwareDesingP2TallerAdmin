@@ -6,6 +6,8 @@ import { ReparacionesComponent } from './pages/reparaciones/reparaciones.compone
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
 import { CrearCarroComponent } from './pages/crear-carro/crear-carro.component';
+import { CrearReparacionComponent } from './pages/crear-reparacion/crear-reparacion.component';
+import { ViewReparacionComponent } from './pages/view-reparacion/view-reparacion.component';
 
 const routes: Routes = [
     {
@@ -31,6 +33,15 @@ const routes: Routes = [
     {
         path: 'crear-carro',
         component: CrearCarroComponent
+    }
+    ,
+    {
+        path: 'crear-reparacion',
+        component: CrearReparacionComponent
+    },
+    {
+        path: 'ver-reparacion/:id',
+        component: ViewReparacionComponent
     }
 ]
 

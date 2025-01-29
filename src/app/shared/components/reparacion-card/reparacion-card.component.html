@@ -1,1 +1,20 @@
-<p>reparacion-card works!</p>
+<div class="reparacion-card" [ngClass]="getApprovalClass()">
+  <!-- Repair Image -->
+  <div class="reparacion-image">
+    <img *ngIf="reparacionToShow.fotoEstado; else noImage" [src]="reparacionToShow.fotoEstado" alt="Foto de reparación {{ reparacionToShow.nombre }}" />
+    <ng-template #noImage>
+      <div class="no-image-placeholder">
+        <p>Sin foto disponible</p>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Repair Information -->
+  <div class="reparacion-info">
+    <h3>{{ reparacionToShow.nombre }}</h3>
+    <p><strong>Encargado:</strong> {{ reparacionToShow.encargado }}</p>
+    <p><strong>Estado:</strong> {{ reparacionToShow.estado }}</p>
+    <p><strong>Precio:</strong> {{ reparacionToShow.precio }}</p>
+    <p class="approval-status">{{ getApprovalText() }}</p>
+  </div>
+</div>

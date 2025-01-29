@@ -9,7 +9,8 @@ import { SharedModule } from '../shared/shared.module';
 import { CrearUsuarioComponent } from './pages/crear-usuario/crear-usuario.component';
 import { FormsModule } from '@angular/forms';
 import { CrearCarroComponent } from './pages/crear-carro/crear-carro.component';
-import { CrearReparacionComponent } from './pages/crear-reparacion/crear-reparacion.component'; // Importar FormsModule
+import { CrearReparacionComponent } from './pages/crear-reparacion/crear-reparacion.component';
+import { ViewReparacionComponent } from './pages/view-reparacion/view-reparacion.component'; // Importar FormsModule
 
 
 
@@ -22,7 +23,8 @@ import { CrearReparacionComponent } from './pages/crear-reparacion/crear-reparac
     InicioComponent,
     CrearUsuarioComponent,
     CrearCarroComponent,
-    CrearReparacionComponent
+    CrearReparacionComponent,
+    ViewReparacionComponent
   ],
   imports: [
     CommonModule,

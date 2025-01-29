@@ -17,4 +17,25 @@ export class ReparacionesService {
             `${this.API_URL}/reparacion/show/${id}`
         );
     }
+
+    repair(id: String) {
+        return this.http.post<{ msg: String; data: IReparacion }>(
+            `${this.API_URL}/reparacion/repair/${id}`,
+            {}
+        );
+    }
+
+    end(id: String) {
+        return this.http.post<{ msg: String; data: IReparacion }>(
+            `${this.API_URL}/reparacion/finish/${id}`,
+            {}
+        );
+    }
+
+    getReparacion(id: String) {
+        return this.http.get<{ msg: String; data: IReparacion }>(
+            `${this.API_URL}/reparacion/unique/${id}`
+        );
+    }
+
 }
