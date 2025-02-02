@@ -1,7 +1,6 @@
 <div class="reparacion-container">
     <div class="reparacion-card">
       
-      <!-- Repair Image -->
       <div class="reparacion-image">
         <img *ngIf="reparacion.fotoEstado; else noImage" [src]="reparacion.fotoEstado" alt="Foto de {{ reparacion.nombre }}" />
         <ng-template #noImage>
@@ -11,23 +10,21 @@
         </ng-template>
       </div>
   
-      <!-- Repair Information -->
       <div class="reparacion-info">
         <h2>{{ reparacion.nombre }}</h2>
         <p><strong>Encargado:</strong> {{ reparacion.encargado }}</p>
         <p><strong>Precio:</strong> ${{ reparacion.precio }}</p>
         <p><strong>Estado:</strong> {{ reparacion.estado }}</p>
+        <p><strong>Info:</strong> {{ reparacion.infoCarro }}</p>
         <p><strong>Aprobación:</strong> 
           <span [ngClass]="reparacion.aprobado">{{ getApprovalText() }}</span>
         </p>
       </div>
   
-      <!-- Show "Empezar Reparación" if aprobado = 'approved' AND estado = 'Necesario' or 'Sugerido' -->
       <div class="reparacion-buttons" *ngIf="reparacion.aprobado === 'approved' && (reparacion.estado === 'Necesario' || reparacion.estado === 'Sugerido')">
         <button class="btn btn-start" (click)="onStartRepair()">Empezar Reparación</button>
       </div>
 
-      <!-- Show "Terminar Reparación" only if estado = 'Reparando' -->
       <div class="reparacion-buttons" *ngIf="reparacion.estado === 'Reparando'">
         <button class="btn btn-start" (click)="onFinishRepair()">Terminar Reparación</button>
       </div>

@@ -18,6 +18,7 @@ export class ViewReparacionComponent implements OnInit {
     nombre: '',
     precio: '',
     encargado: '',
+    infoCarro: '',
     estado: '',
     fotoEstado: '',
     aprobado: '',

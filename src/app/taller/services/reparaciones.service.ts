@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { environment } from '../../../environment/environment';
-import { IReparacion } from '../../models/reparacion.models';
+import { IReparacion, IRepaToSend } from '../../models/reparacion.models';
 
 @Injectable({
     providedIn: 'root',
@@ -37,5 +37,14 @@ export class ReparacionesService {
             `${this.API_URL}/reparacion/unique/${id}`
         );
     }
+
+    crearRepa(repa: IRepaToSend) {
+            return this.http.post<{ msg: string; data: IRepaToSend }>(
+              `${this.API_URL}/reparacion/registro`,
+              repa
+            );
+          }
+
+
 
 }

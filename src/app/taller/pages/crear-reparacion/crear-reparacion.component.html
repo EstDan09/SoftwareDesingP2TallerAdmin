@@ -1,1 +1,57 @@
-<p>crear-reparacion works!</p>
+<div class="crear-reparacion-container">
+    <h2>Crear Reparación</h2>
+    <form (ngSubmit)="crearRepa()" #repaForm="ngForm">
+      
+      <!-- Dropdown para seleccionar el carro -->
+      <div class="form-group">
+        <label for="placa">Placa del Carro</label>
+        <select id="placa" name="placa" class="form-control" [(ngModel)]="repaACrear.placa" (change)="onCarroSelected($event)" required>
+          <option value="" disabled selected>Selecciona un carro</option>
+          <option *ngFor="let carro of carrosOptions" [value]="carro.placa">
+            {{ carro.marca }} - {{ carro.modelo }} ({{ carro.placa }})
+          </option>
+        </select>
+      </div>
+
+      <!-- Mostrar infoCarro después de seleccionar un carro -->
+      <div *ngIf="repaACrear.infoCarro" class="form-group">
+        <label>Información del Carro:</label>
+        <p>{{ repaACrear.infoCarro }}</p>
+      </div>
+
+      <!-- Campos de la reparación -->
+      <div class="form-group">
+        <label for="nombre">Nombre de la Reparación</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Cambio de aceite" required [(ngModel)]="repaACrear.nombre"/>
+      </div>
+
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input type="text" id="precio" name="precio" class="form-control" placeholder="Ej. 50000" required [(ngModel)]="repaACrear.precio"/>
+      </div>
+
+      <div class="form-group">
+        <label for="encargado">Encargado</label>
+        <input type="text" id="encargado" name="encargado" class="form-control" placeholder="Ej. Juan Pérez" required [(ngModel)]="repaACrear.encargado"/>
+      </div>
+
+      <div class="form-group">
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado" class="form-control" [(ngModel)]="repaACrear.estado" required>
+          <option value="" disabled selected>Selecciona un estado</option>
+          <option *ngFor="let estado of estadosToChoose" [value]="estado">{{ estado }}</option>
+        </select>
+      </div>
+
+      <!-- Subida de imagen -->
+      <div class="form-group">
+        <label for="fotoEstado">Foto del Estado</label>
+        <input type="file" id="fotoEstado" name="fotoEstado" class="form-control" (change)="onFileSelected($event)" accept="image/*"/>
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" class="btn btn-primary" [disabled]="!repaForm.form.valid">
+        Crear Reparación
+      </button>
+    </form>
+</div>

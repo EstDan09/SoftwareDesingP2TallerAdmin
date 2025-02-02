@@ -1,3 +1,13 @@
-<div class="reparaciones-container">
-    <app-reparacion-card *ngFor="let repa of reparaciones" [reparacionToShow]="repa" (click)="goToReparaciones(repa._id)"></app-reparacion-card>
+<div>
+    
+    <header class="repa-header">
+        <h1>Lista de Reparaciones</h1>
+        <button class="btn btn-primary" (click)="goToCrearReparaciones()">Crear Reparacion</button>
+    </header>
+
+    <div class="reparaciones-container">
+        <app-reparacion-card *ngFor="let repa of reparaciones" [reparacionToShow]="repa"
+            (click)="goToReparaciones(repa._id)"></app-reparacion-card>
+    </div>
+
 </div>

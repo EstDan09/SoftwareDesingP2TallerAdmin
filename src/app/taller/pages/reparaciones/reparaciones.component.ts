@@ -35,5 +35,9 @@ export class ReparacionesComponent implements OnInit {
   goToReparaciones(id: string) {
     this._router.navigate(['taller/ver-reparacion', id])
   }
+
+  goToCrearReparaciones() {
+    this._router.navigate(['taller/crear-reparacion']);
+  }
   
 }
